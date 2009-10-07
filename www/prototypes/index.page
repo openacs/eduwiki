@@ -1,0 +1,10 @@
+::xowiki::Page new -title "#eduwiki.IndexPage#" -text {
+{
+&gt;&gt;left-col75&lt;&lt;
+{{activity-info}}
+{{eduwiki-activities-pages}}
+&gt;&gt;&lt;&lt;
+&gt;&gt;right-col25&lt;&lt;
+&nbsp;
+&gt;&gt;&lt;&lt; } text/html
+}

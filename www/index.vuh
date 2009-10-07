@@ -1,0 +1,16 @@
+::eduwiki::Package initialize -ad_doc {
+
+  This is the resolver for this package. It turns a request into
+  an object and executes the object with the computed method
+
+  @author Gustaf Neumann (gustaf.neumann@wu-wien.ac.at)
+  @creation-date July, 2006
+  @cvs-id $Id$
+
+} -parameter {
+  {-m view}
+  {-folder_id:integer 0}
+}
+
+::$package_id reply_to_user [::$package_id invoke -method $m]
+ad_script_abort

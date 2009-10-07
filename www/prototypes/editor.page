@@ -1,0 +1,31 @@
+::xowiki::Object new -title "RichText Editor Config" -text {
+
+                 set xinha {richtext(richtext),nospell
+                             {options {editor xinha plugins {
+                             GetHtml ContextMenu CharacterMap TableOperations
+                             ListType EditTag
+                             } height 350px javascript {
+xinha_config.toolbar =
+ [
+   ["popupeditor"],
+   ["separator","formatblock","fontname","fontsize","bold","italic","underline","strikethrough"],
+   ["separator","forecolor","hilitecolor","textindicator"],
+   ["linebreak","separator","justifyleft","justifycenter","justifyright","justifyfull"],
+   ["separator","insertorderedlist","insertunorderedlist","outdent","indent"],
+   ["separator","inserthorizontalrule","createlink","insertimage","inserttable"],
+   ["linebreak","separator","undo","redo"],
+   ["separator","killword","clearfonts","removeformat"],
+   ["htmlmode"]
+ ];
+                             }}}
+                             {html {rows 15 cols 50 style {width: 90%}}}
+			     {label \#xowiki.Page-text\#}
+                             {htmlarea_p 1}}
+
+set name {text(hidden) {label \#xowiki.Page-name\#}}
+set autor {text(hidden) {label \#xowiki.Page-creator\#}}
+set descr {text(hidden),optional {label \#xowiki.description\#} {html {size 40 maxlength 50}} {values ""}}
+set tit {text {label \#eduwiki.Eduwiki_Title_\#} {html {size 40 maxlength 50}} {values ""}}
+set nslg {text(hidden) {label \#xowiki.Page-nls_language\#} {values "[lang::system::locale]"}}
+set widget_specs [list *,name $name *,creator $autor *,text $xinha *,title $tit *,description $descr *,nls_language $nslg]
+}
