@@ -24,10 +24,17 @@ namespace eval ::eduwiki {
     }
 
     Package instproc destroy {} {
-	::xowiki::Link instmixin delete ::eduwiki::EduWikiLink
-	::xowiki::Page instmixin delete ::eduwiki::EduWikiPage
-	::xowiki::WikiForm instmixin delete ::eduwiki::EduWikiForm
-        next
+	#
+	# In general, it is possible, that multiple eduwiki packages are
+	# concurrently active in one thread.  We want to remove the mixin only,
+	# when the last instance is deleted.
+	#
+	if {[llength [[self class] allinstances]] == 1} {
+	    ::xowiki::Link instmixin delete ::eduwiki::EduWikiLink
+	    ::xowiki::Page instmixin delete ::eduwiki::EduWikiPage
+	    ::xowiki::WikiForm instmixin delete ::eduwiki::EduWikiForm
+	}      
+	next
     }
 
     Package instproc return_page {
