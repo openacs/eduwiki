@@ -12,7 +12,7 @@
 }
 
 set page_title "[_ eduwiki.Eduwiki_pageslist_]"
-set context [list]
+set context {}
 set community_id [dotlrn_community::get_community_id]
 
 # get eduwiki_category

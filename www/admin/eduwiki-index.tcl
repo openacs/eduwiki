@@ -11,7 +11,7 @@
 }
 
 set page_title "[_ eduwiki.Eduwiki_tasklist_]"
-set context [list]
+set context {}
 # get limit_dates_p
 set limit_dates_p [parameter::get -package_id $package_id \
 		       -parameter with_limit_dates \
