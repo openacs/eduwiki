@@ -38,7 +38,7 @@ ad_proc -public eduwiki::apm::after_mount {
    set rel_id [group::get_rel_segment -group_id $comm_id -type dotlrn_member_rel]
    permission::grant -object_id $package_id -party_id $rel_id -privilege read
 
-    set root_directory [get_server_root]
+    set root_directory [acs_root_dir]
     set prototypes_path "$root_directory/packages/eduwiki/www/prototypes"
     set folder_id [content::folder::get_folder_from_package \
 		      -package_id $package_id]
