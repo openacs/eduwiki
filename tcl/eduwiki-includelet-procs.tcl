@@ -5,7 +5,6 @@
 
   @author Hector Amado (hr_amado@galileo.edu)
   @creation-date 2009-07-16
-  @cvs-id $Id $
 }
 
 ::xo::db::require package xowiki
